@@ -28,8 +28,6 @@
     [self updateWithEntry:_entry];
 }
 
-
-
 - (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
     NSString *title = _titleTextField.text;
     NSString *body = _bodyTextField.text;

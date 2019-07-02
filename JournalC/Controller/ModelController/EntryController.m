@@ -11,6 +11,16 @@
 
 @implementation EntryController
 //shared instance
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _entries = [NSMutableArray new];
+    }
+    return self;
+}
+
 + (EntryController *)sharedInstance {
    
     static EntryController*shared = nil;
@@ -22,9 +32,7 @@
 }
 
 - (void)createEntry:(NSString *)title bodyText:(NSString *)bodyText {
-    Entry *entry;
-    entry.title = title;
-    entry.bodyText = bodyText;
+    Entry *entry = [[Entry alloc] initWithName:title bodyText:bodyText];
     [_entries addObject:entry];
 }
 
